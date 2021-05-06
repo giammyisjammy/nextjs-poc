@@ -67,8 +67,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
+          Powered by <img src="/logo.png" alt="Monrif Logo" className="logo" />
         </a>
       </footer>
 
