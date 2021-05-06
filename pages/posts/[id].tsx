@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Layout from '../../components/layout';
 import { articles } from '../../mocks';
 
 const Post = () => {
@@ -8,7 +9,7 @@ const Post = () => {
   const { id } = router.query;
   const article = articles.find((x) => x.id === id);
   return (
-    <>
+    <Layout>
       <Head>
         <title>Post No. {id}</title>
       </Head>
@@ -24,7 +25,7 @@ const Post = () => {
       <Link href="/">
         <a>Back to home</a>
       </Link>
-    </>
+    </Layout>
   );
 };
 
