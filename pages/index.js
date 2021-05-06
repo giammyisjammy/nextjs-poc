@@ -1,5 +1,6 @@
-import Head from 'next/head'
-
+import Head from 'next/head';
+import Link from 'next/link';
+import { articles } from '../mocks';
 export default function Home() {
   return (
     <div className="container">
@@ -10,15 +11,27 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js! 😀</a>
+          Read{' '}
+          <Link href="/posts/first-post">
+            <a>this page!</a>
+          </Link>
         </h1>
-
-        <p className="description">
+        <h2>Article List</h2>
+        {/* <p className="description">
           Get started by editing <code>pages/index.js</code>
-        </p>
-
+        </p> */}
         <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
+          {articles.map((article, i) => {
+            return (
+              <Link key={i} href={`/posts/${article.id}`}>
+                <a className="card">
+                  <h3>{article.title} &rarr;</h3>
+                  <p>{article.subtitle}</p>
+                </a>
+              </Link>
+            );
+          })}
+          {/* <a href="https://nextjs.org/docs" className="card">
             <h3>Documentation &rarr;</h3>
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
@@ -44,7 +57,7 @@ export default function Home() {
             <p>
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
-          </a>
+          </a> */}
         </div>
       </main>
 
@@ -150,7 +163,7 @@ export default function Home() {
 
         .card {
           margin: 1rem;
-          flex-basis: 45%;
+          // flex-basis: 45%;
           padding: 1.5rem;
           text-align: left;
           color: inherit;
@@ -205,5 +218,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }

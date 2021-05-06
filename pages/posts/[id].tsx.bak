@@ -1,0 +1,26 @@
+import Layout from '../../components/layout';
+import { getSortedPostsData } from '../../lib/posts';
+
+export default function Post() {
+  return <Layout>...</Layout>;
+}
+
+/**
+ * Return a list of possible value for id
+ */
+export async function getStaticPaths() {
+  //
+}
+
+/**
+ * Fetch necessary data for the blog post using params.id
+ * @param param0
+ */
+export async function getStaticProps({ params }) {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
