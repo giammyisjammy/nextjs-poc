@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Layout from '../../components/layout';
 import { articles } from '../../mocks';
@@ -22,9 +21,6 @@ const Post = () => {
       ) : (
         <h1>4🤔4 Not Found</h1>
       )}
-      <Link href="/">
-        <a>Back to home</a>
-      </Link>
     </Layout>
   );
 };
